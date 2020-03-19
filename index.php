@@ -1,6 +1,7 @@
 <?php
     require('model/database.php');
     require('model/vehicles_db.php');
+    require('model/makes_db.php');
     require('model/classes_db.php');
     require('model/types_db.php');
 
@@ -20,7 +21,7 @@
         include('type_list.php');
 		include('class_list.php');
   } else if {$action == 'list_makes'){
-      $vehicle_make = get_vehicle_make;
+      $vehicle_make = get_makes;
       include('makes_list.php');
   } else if {$action == 'delete_vehicle') {
       $type_id = filter_input(INPUT_POST, 'type_id', FILTER_VALIDATE_INT);
