@@ -1,42 +1,53 @@
 <?php 
-    function get_categories() {
+    function get_vehicles_by_class() {
+        $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
+        //write way to sort items
         global $db;
-        $query = 'SELECT * FROM categories ORDER BY categoryID';
+        if ($class_id == NULL || $class_id == FALSE) {
+            $query = 'SELECT T.ItemNum, T.Title, T.Description, C.categoryName FROM todoitems T LEFT JOIN categories C ON T.categoryID = C.categoryID ORDER BY C.categoryID';
+        } else {
+            $query = 'SELECT T.ItemNum, T.Title, T.Description, C.categoryName FROM todoitems T LEFT JOIN categories C ON T.categoryID = C.categoryID WHERE T.categoryID = :category_id ORDER BY ItemNum';
+        }
         $statement = $db->prepare($query);
+        $statement->bindValue(':class_id', $class_id);
         $statement->execute();
-        $categories = $statement->fetchAll();
+        $vehicles = $statement->fetchAll();
         $statement->closeCursor();
-        return $categories;
+        return $vehicles;
     }
 
-    function get_category_name($category_id) {
+    function get_vehicle($item_id) {
         global $db;
-        $query = 'SELECT * FROM categories WHERE categoryID = :category_id';
+        $query = 'SELECT * FROM vehicles WHERE ItemNum = :item_id';
         $statement = $db->prepare($query);
-        $statement->bindValue(':category_id', $category_id);
+        $statement->bindValue(':item_id', $item_id);
         $statement->execute();
-        $category = $statement->fetch();
+        $item = $statement->fetch();
         $statement->closeCursor();
-        $category_name = $category['categoryName'];
-        return $category_name;
+        return $item;
     }
 
-    function delete_category($category_id) {
+    function delete_vehicle($item_id) {
         global $db;
-        $query = 'DELETE FROM categories WHERE categoryID = :category_id';
+        $query = 'DELETE FROM vehicles WHERE ItemNum = :item_id';
         $statement = $db->prepare($query);
-        $statement->bindValue(':category_id', $category_id);
+        $statement->bindValue(':item_id', $item_id);
         $statement->execute();
         $statement->closeCursor();
     }
 
-    function add_category($category_name) {
+    function add_vehicle($year, $make, $model, $price, $type_id, $class_id) {
         global $db;
-        $query = 'INSERT INTO categories (categoryName)
+        $query = 'INSERT INTO vehicles (Year, Make, Model, Price, type_id, class_id)
               VALUES
-                 (:categoryName)';
+                 (:year, :make, :model, :price, :type_id, :class_id)';
         $statement = $db->prepare($query);
-        $statement->bindValue(':categoryName', $category_name);
+        $statement->bindValue(':model', $model);
+        $statement->bindValue(':year', $year);
+        $statement->bindValue(':make', $make);
+        $statement->bindValue(':price', $price);
+        $statement->bindValue(':type_id', $type_id);
+        $statement->bindValue(':class_id', $class_id);
         $statement->execute();
         $statement->closeCursor();
     }
