@@ -7,8 +7,7 @@
             <label>Vehicle:</label>
             <select name="vehicle_id">
             <?php foreach ($vehicles as $vehicle) : ?>
-                <option value="<?php echo $vehicle['vehicleID']; ?>">
-                    <?php echo $vehicle['vehicleName']; ?>
+                <option value="<?php echo $vehicles['vehicle_ID']; ?>">        
                 </option>
             <?php endforeach; ?>
             </select><br>
@@ -25,7 +24,7 @@
             <label>Price:</label>
             <input type="text" name="price" max="20" required><br>
             <label>&nbsp;</label>
-            <input type="submit" value="Add Item" class="button blue"><br>
+            <input type="submit" value="Add Vehicle" class="button blue"><br>
         </form>
         <p><a href="index.php?action=list_vehicles">View Vehicle List</a></p>
     </main>
