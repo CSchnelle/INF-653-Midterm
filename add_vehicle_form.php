@@ -4,14 +4,14 @@
         <form action="index.php" method="post" id="add_vehicle_form">
             <input type="hidden" name="action" value="add_vehicle">
 
-            //<label>Category:</label>
-            //<select name="category_id">
-          //  <?php foreach ($categories as $category) : ?>
-           //     <option value="<?php echo $category['categoryID']; ?>">
-          //          <?php echo $category['categoryName']; ?>
-         //       </option>
-        //    <?php endforeach; ?>
-         //   </select><br>
+            <label>Vehicle:</label>
+            <select name="vehicle_id">
+            <?php foreach ($vehicles as $vehicle) : ?>
+                <option value="<?php echo $vehicle['vehicleID']; ?>">
+                    <?php echo $vehicle['vehicleName']; ?>
+                </option>
+            <?php endforeach; ?>
+            </select><br>
 
             <label>Make:</label>
             <input type="text" name="make" max="20" required><br>
