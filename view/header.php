@@ -3,12 +3,12 @@
 
 <!-- the head section -->
 <head>
-    <title>My To Do List</title>
+    <title>Zippy Used Autos</title>
     <link rel="stylesheet" type="text/css" href="view/css/main.css" />
 </head>
 
 <!-- the body section -->
 <body>
     <header>
-        <h1>My To Do List</h1>
+        <h1>Zippy Used Autos</h1>
     </header>
