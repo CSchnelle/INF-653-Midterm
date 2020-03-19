@@ -8,7 +8,7 @@
             </tr>        
             <?php foreach ($types as $type) : ?>
             <tr>
-                <td><?php echo $type['typeName']; ?></td>
+                <td><?php echo $type['type_name']; ?></td>
                 <td>
                     <form action="." method="post">
                         <input type="hidden" name="action" value="delete_type">
@@ -38,7 +38,7 @@
     </section>
 </main>
 <footer>
-    <p>&copy; <?php echo date("Y"); ?> Zippy Used Autos</p>
+    <p>&copy; <?php echo date("Y"); ?>Zippy Used Autos</p>
 </footer>
 </body>
 </html>
