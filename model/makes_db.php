@@ -12,7 +12,7 @@
   //function to add a make
   function add_make($make_name) {
     global $db;
-    $query = 'INSERT INTO makes (make_name) VALUES (:make_name';
+    $query = 'INSERT INTO makes (make_name) VALUES (:make_name)';
     $statement - $db->prepare($query);
     $statement->bindValue(':make_name', $make_name);
     $statement->execute();
