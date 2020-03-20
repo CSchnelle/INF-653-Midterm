@@ -8,7 +8,7 @@
             </tr>        
             <?php foreach ($classes as $class) : ?>
             <tr>
-                <td><?php echo $class['className']; ?></td>
+                <td><?php echo $class['class_name']; ?></td>
                 <td>
                     <form action="." method="post">
                         <input type="hidden" name="action" value="delete_class">
