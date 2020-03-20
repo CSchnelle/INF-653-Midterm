@@ -18,14 +18,11 @@
         $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
         $
         include('vehicle_list.php');
-        include('type_list.php');
-		include('class_list.php');
+     
   } else if {$action == 'list_makes'){
       $vehicle_make = get_makes;
       include('makes_list.php');
-  } else if {$action == 'delete_vehicle') {
-      $type_id = filter_input(INPUT_POST, 'type_id', FILTER_VALIDATE_INT);
-      $class_id = filter_input(INPUT_POST, 'class_id', FILTER_VALIDATE_INT);
+  
   } else if {$action == 'show_add_form') {
       $vehicles = get_vehicles();
       include('add_vehicle_form.php');
@@ -42,5 +39,15 @@
       } else {
           add_vehicle($type_id, $class_id, $make, $model, $year, $price);
           header("Location: .?action=list_vehicles");
+ } else {$action == 'delete_vehicle'); {
+	      $vehicle_id = filter_input(INPUT_POST, 'vehicle_id', FILTER_VALIDATE_INT);
+	      if($vehicle_id == NULL) {
+		      $error = "There are no vehicles to delete.";
+		      include('errors/errors.php');
+	      } else {
+		      delete_vehicle($vehicle_id);
+		      header("Location .?action=list_vehicles");
+		      
+	   
 ?>          
       
