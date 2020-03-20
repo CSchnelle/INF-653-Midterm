@@ -12,7 +12,7 @@
   //function to add a type
   function add_type($type_name) {
     global $db;
-    $query = 'INSERT INTO types (type_name) VALUES (:type_name';
+    $query = 'INSERT INTO types (type_name) VALUES (:type_name)';
     $statement - $db->prepare($query);
     $statement->bindValue(':type_name', $type_name);
     $statement->execute();
