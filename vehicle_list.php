@@ -32,6 +32,17 @@
         </table>
     </section>
     <section>
+        <h2>Sort by</h2>
+        <form action="." method="get" id="get_by">
+                <select name = "action">
+                    <option value="get_by_price">Price</option>
+                    <option value="get_by_year">Year</option>
+                    <option value="get_by_type">Type</option>
+                    <option value="get_by_class">Class</option>
+            </select>
+            <input type="submit" value="submit"/>
+        </form>
+    <section>
         <h2>Add Vehicle</h2>
         <form action="." method="post" id="add_vehicle_form">
             <input type="hidden" name="action" value="add_vehicle">
