@@ -19,15 +19,15 @@
         $
         include('vehicle_list.php');
      //list makes
-  } else if {$action == 'get_makes'){
+  } else if ($action == 'get_makes'){
       $vehicle_make = get_makes();
       include('vehicle_list.php');
   //vehicle add form
-  } else if {$action == 'show_add_form') {
+  } else if ($action == 'show_add_form') {
       $vehicles = get_vehicles();
       include('add_vehicle_form.php');
   //add vehicle
-  } else if {$action == 'add_vehicle'); {
+  } else if ($action == 'add_vehicle'); {
       $type_id = filter_input(INPUT_POST, 'type_id', FILTER_VALIDATE_INT);
       $class_id = filter_input(INPUT_POST, 'class_id', FILTER_VALIDATE_INT);
       $make = filter_input(INPUT_POST, 'make');
@@ -41,7 +41,7 @@
           add_vehicle($type_id, $class_id, $make, $model, $year, $price);
           header("Location: .?action=list_vehicles");
    //delete vehicle	      
-  } else if {$action == 'delete_vehicle'); {
+  } else if ($action == 'delete_vehicle'); {
 	      $vehicle_id = filter_input(INPUT_POST, 'vehicle_id', FILTER_VALIDATE_INT);
 	      if($vehicle_id == NULL) {
 		      $error = "There are no vehicles to delete.";
@@ -50,11 +50,11 @@
 		      delete_vehicle($vehicle_id);
 		      header("Location .?action=list_vehicles");
   //sort by price		      
-  } else if {$action == 'get_by_price'); {
+  } else if ($action == 'get_by_price'); {
 	$price = filter_input(INPUT_GET, 'price', FILTER_VALIDATE_INT);
 	include(vehicle_list.php);
   //sort by year		      
-  } else if {$action == 'get_by_year'); {
+  } else if ($action == 'get_by_year'); {
  	$year = filter_input(INPUT_GET, 'year', FILTER_VALIDATE_INT);
 	include(vehicle_list.php);
   //sort by class		      
@@ -62,7 +62,7 @@
         $classes = filter_input(INPUT_GET, 'class_name');
 	include(vehicle_list.php);
   //sort by type		      
-  } else {$action =='get_by_type');{
+  } else ($action =='get_by_type');{
 	types = filter_input(INPUT_GET, 'type_name', FILTER_VALIDATE_INT);
 	include(vehicle_list.php);
  	 }
