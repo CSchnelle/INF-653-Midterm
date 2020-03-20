@@ -12,7 +12,7 @@
   //function to add a class
   function add_class($class_name) {
     global $db;
-    $query = 'INSERT INTO classes (class_name) VALUES (:class_name';
+    $query = 'INSERT INTO classes (class_name) VALUES (:class_name)';
     $statement - $db->prepare($query);
     $statement->bindValue(':class_name', $class_name);
     $statement->execute();
