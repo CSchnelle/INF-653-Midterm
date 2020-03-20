@@ -1,6 +1,6 @@
 <?php 
     //get all classes
-    function get_class() {
+    function get_classes() {
         $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
         global $db;
         $query = 'SELECT * FROM classes';
