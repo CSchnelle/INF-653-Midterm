@@ -1,16 +1,5 @@
 <?php 
-    //get all classes
-    function get_classes() {
-        $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
-        global $db;
-        $query = 'SELECT * FROM classes';
-        
-        $statement = $db->prepare($query);
-        $statement->execute();
-        $classes = $statement->fetchAll();
-        $statement->closeCursor();
-        return $classes;
-    }
+ 
     //sorts by price
     function get_by_price() {
         $price = filter_input(INPUT_GET, 'price',FILTER_VALIDATE_INT);
