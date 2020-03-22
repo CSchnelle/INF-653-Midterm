@@ -36,11 +36,11 @@
   //sort by class		      
   } else if ($action =='get_by_class') {
         $classes = filter_input(INPUT_GET, 'class_name');
-	include('vehicle_list.php');
+	include('class_list.php');
   //sort by type		      
   } else if($action =='get_by_type'){
 	$types = filter_input(INPUT_GET, 'type_name', FILTER_VALIDATE_INT);
-	include('vehicle_list.php');
+	include('type_list.php');
  	   
     //delete vehicle	      
   } else if ($action == 'delete_vehicle') {
