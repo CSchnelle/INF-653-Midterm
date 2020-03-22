@@ -7,10 +7,6 @@
 
 
 
-include('view/header.php');
-include('view/vehicle_list.php');
-include('view/footer.php');
-/*
    $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL) {
         $action = filter_input(INPUT_GET, 'action');
@@ -54,7 +50,7 @@ include('view/footer.php');
 		      include('errors/errors.php');
 	      } else 
 		      delete_vehicle($vehicle_id);
-		      header("Location: .?action=list_vehicles"); 
+		      header("Location: .?action=get_vehicles"); 
   //add vehicle
   } else ($action == 'add_vehicle') {
       $type_name = filter_input(INPUT_POST, 'type_name');
@@ -68,8 +64,8 @@ include('view/footer.php');
           include('errors/errors.php');
 		} else 
           add_vehicle($type_name, $class_name, $make, $model, $year, $price);
-          header("Location: .?action=list_vehicles");
+          header("Location: .?action=get_vehicles");
   }
-  */
+  
 ?>         
       
