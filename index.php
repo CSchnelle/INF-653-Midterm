@@ -22,9 +22,11 @@
       $vehicle_make = get_makes();
       include('vehicle_list.php');
   //vehicle add form
+	  /*
   } else if ($action == 'show_add_form') {
       $vehicles = get_vehicles();
       include('add_vehicle_form.php');
+      */
   //sort by price
   } else if ($action == 'get_by_price') {
 	$price = filter_input(INPUT_GET, 'price', FILTER_VALIDATE_INT);
