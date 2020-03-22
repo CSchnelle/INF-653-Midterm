@@ -14,19 +14,19 @@
             $action = 'list_vehicles';
         }
     }
-  if ($action == 'get_vehicles') {
-		$vehicles = get_vehicles();
+  if ($action == 'list_vehicles') {
+		$vehicles = list_vehicles();
         include('vehicle_list.php');
      //list makes
   } else if ($action == 'get_makes'){
       $vehicle_make = get_makes();
       include('vehicle_list.php');
   //vehicle add form
-	  /*
+	  
   } else if ($action == 'show_add_form') {
       $vehicles = get_vehicles();
       include('add_vehicle_form.php');
-      */
+      
   //sort by price
   } else if ($action == 'get_by_price') {
 	$price = filter_input(INPUT_GET, 'price', FILTER_VALIDATE_INT);
@@ -66,7 +66,7 @@
           include('errors/errors.php');
 		} else 
           add_vehicle($type_name, $class_name, $make, $model, $year, $price);
-          header("Location: .?action=get_vehicles");
+          header("Location: .?action=list_vehicles");
   }
   
 ?>         
