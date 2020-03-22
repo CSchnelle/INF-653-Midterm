@@ -6,6 +6,11 @@
     require('model/types_db.php');
 
 
+
+include('view/header.php');
+include('view/vehicle_list.php');
+include('view/footer.php');
+/*
    $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL) {
         $action = filter_input(INPUT_GET, 'action');
@@ -65,5 +70,6 @@
           add_vehicle($type_name, $class_name, $make, $model, $year, $price);
           header("Location: .?action=list_vehicles");
   }
+  */
 ?>         
       
