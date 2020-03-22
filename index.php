@@ -40,7 +40,7 @@
   //sort by type		      
   } else if($action =='get_by_type'){
 	$types = filter_input(INPUT_GET, 'type_name', FILTER_VALIDATE_INT);
-	include('type_list.php');
+	include('types_list.php');
  	   
     //delete vehicle	      
   } else if ($action == 'delete_vehicle') {
