@@ -16,7 +16,7 @@
     }
   if ($action == 'list_vehicles') {
 		$vehicles = list_vehicles();
-        include('vehicle_list.php');
+        include('admin/vehicle_list.php');
      //list makes
   } else if ($action == 'get_makes'){
       $vehicle_make = get_makes();
