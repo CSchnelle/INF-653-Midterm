@@ -1,5 +1,16 @@
 <?php 
  
+    //list vehicles default
+    function list_vehicles() {
+        global $db;
+        $query = 'SELECT * FROM vehicles ORDER BY vehicle_id';
+        $statement = $db->prepare($query);
+        $statement->execute();
+        $categories = $statement->fetchAll();
+        $statement->closeCursor();
+        return $vehicles;
+    }
+
     //sorts by price
     function get_by_price() {
         $price = filter_input(INPUT_GET, 'price',FILTER_VALIDATE_INT);
