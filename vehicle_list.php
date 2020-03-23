@@ -20,12 +20,7 @@
                 <td> <?php echo $vehicle['price']; ?></td>
                 <td> <?php echo $vehicle['type_name']; ?></td>
                 <td> <?php echo $vehicle['class_name']; ?></td>
-                    <form action="." method="post">
-                        <input type="hidden" name="action" value="delete_vehicle">
-                        <input type="hidden" name="vehicle_id"
-                            value="<?php echo $vehicle['vehicle_id']; ?>"/>
-                        <input type="submit" value="Remove" class="button red" />
-                    </form>
+             
                 </td>
             </tr>
             <?php endforeach; ?>    
@@ -42,21 +37,7 @@
             </select>
             <input type="submit" value="submit"/>
         </form>
-    <section>
-        <h2>Add Vehicle</h2>
-        <form action="." method="post" id="add_vehicle_form">
-            <input type="hidden" name="action" value="add_vehicle">
-
-            <label>Make:</label>
-            <input type="text" name="make" max="20" required><br>
-            <label>Model:</label>
-            <input type="text" name="model" max="20" required><br>
-            <label>Price:</label>
-            <input type="text" name="price" max="20" required><br>
-            <label>&nbsp;</label>
-            <input id="add_type_button" type="submit" class="button blue" value="Add Type"><br>
-        </form>
-    </section>
+        
     <section>
         <p><a href="index.php">View Vehicles List</a></p>
     </section>
