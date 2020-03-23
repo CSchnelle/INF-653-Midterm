@@ -43,7 +43,7 @@
   } else if($action =='get_by_type'){
 	$types = filter_input(INPUT_GET, 'type_name', FILTER_VALIDATE_INT);
 	include('types_list.php');
- 	   
+ /*	   
     //delete vehicle	      
   } else if ($action == 'delete_vehicle') {
 	      $vehicle_id = filter_input(INPUT_POST, 'vehicle_id', FILTER_VALIDATE_INT);
@@ -68,6 +68,6 @@
           add_vehicle($type_name, $class_name, $make, $model, $year, $price);
           header("Location: .?action=list_vehicles");
   }
-  
+  */
 ?>         
       
